@@ -1,0 +1,68 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- semantic UI -->
+    <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+    <!--Chart js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{% static 'css/main.css' %}"></script>
+
+    <title>Hospital home</title>
+  </head>
+  <body style="background-image: url( 'ems/assets/images/hospital.jpg' ); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;"> 
+    <style>  .homenavbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 5px;
+        overflow: hidden;
+        background-color: #1da0f2;
+        list-style-type: none;
+        color:white;
+        height: 40px;
+      }
+      
+      .homelinks {
+        float: left;
+        color:white;
+      }
+      
+      .homelinks a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        color:white;
+      }
+      
+      /* Change the link color to #111 (black) on hover */
+      .homelinks a:hover {
+        background-color: #111;
+      }</style>
+
+    <ul class="homenavbar" >
+        <span><li><form action="cause" method="post">
+            {%csrf_token%}
+                <!--<button style="border:none; color:white; background-color:#333;">data</button>-->
+                <button formaction="hosanalytics" type="submit" style="border:none; color:white; background-color:#1da0f2;">patient data</button>
+                <button formaction="chat" type="submit" style="border:none; color:white; background-color:#1da0f2;">messages</button>
+                <a href="logoutr" class="homelinks" style="float:right; text-decoration: none;">Logout</a></li>
+        </form></li></span>
+        
+        
+        
+      </ul>
+   
+    <canvas id="myChart" width="1" height="1"></canvas><br/>
+
+    <canvas id="pickup" width="1" height="1"></canvas>
+  </body>
+</html>
+

@@ -1,0 +1,341 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- semantic UI -->
+    <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+    <!--Chart js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{% static '/main.js' %}"></script>
+
+    
+  </head>
+  <body>
+      <style></style>
+    <script>
+        $(document).ready(function(){
+            var endpoint = "cause"
+            var data ="{{context}}"
+            var x = parseInt("{{x}}")
+            var y = parseInt("{{y}}")
+            var z = parseInt("{{z}}")
+            var b = parseInt("{{b}}")
+            var c = parseInt("{{c}}")
+            console.log(data)
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Accident', 'Unidentified', 'Act of nature', 'Attack', 'Pre-existing conditions'],
+                    datasets: [{
+                        label: 'categories of emergency cases',
+                        data: [x,y,z,b,c],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        
+          })
+        
+          $(document).ready(function(){
+            var parklands = parseInt('{{parklands}}')
+            var westlands = parseInt('{{westlands}}')
+            var spring = parseInt('{{spring}}')
+            var riverside = parseInt('{{riverside}}')
+            var kile = parseInt('{{kile}}')
+            var kilimani = parseInt('{{kilimani}}')
+            var loresho = parseInt('{{loresho}}')
+            var muthaiga = parseInt('{{muthaiga}}')
+            var mathare = parseInt('{{mathare}}')
+            var mathareN = parseInt('{{mathareN}}')
+            var huruma = parseInt('{{huruma}}')
+            var kariobangi = parseInt('{{kariobangi}}')
+            var shauri = parseInt('{{shauri}}')
+            var jericho = parseInt('{{jericho}}')
+            var makadara = parseInt('{{makadara}}')
+            var doni = parseInt('{{doni}}')
+            var uhuru = parseInt('{{uhuru}}')
+            var buru = parseInt('{{buru}}')
+            var umoja = parseInt('{{umoja}}')
+            var ctx = document.getElementById('pickup').getContext('2d');
+            var age = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['parklands', 'westlands', 'spring valley', 'riverside', 'kileleshwa', 'kilimani', 'loresho', 'muthaiga', 'mathare', 'huruma', 'kariobangi', 'shauri moyo', 'jericho', 'makadara', 'donholm', 'uhuru', 'buruburu', 'umoja'],
+                    datasets: [{
+                        label: 'pickup locations',
+                        data: [parklands, westlands, spring, riverside, kile, kilimani, loresho, muthaiga, mathare, huruma, kariobangi, shauri, jericho, makadara, doni, uhuru, buru, umoja],
+                        backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(39, 16, 71, 0.2)',
+                        'rgba(210,127,127, 0.2)',
+                        'rgba(61,136,127, 0.2)',
+                        'rgba(143,88,127, 0.2)',
+                        'rgba(237,152,127, 0.2)',
+                        'rgba(112,34,255, 0.2)',
+                        'rgba(237,71,255, 0.2)',
+                        'rgba(96,197,213, 0.2)',
+                        'rgba(255,43,73, 0.2)',
+                        'rgba(43,0,212, 0.2)',
+                        'rgba(179,127,127, 0.2)',
+                        'rgba(76,234,255, 0.2)',
+                        'rgba(159,127,170, 0.2)',
+                        'rgba(111,127,40, 0.2)'
+                        ],
+
+                        borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(39, 16, 71, 1)',
+                        'rgba(210,127,127, 1)',
+                        'rgba(61,136,127, 1)',
+                        'rgba(143,88,127, 1)',
+                        'rgba(237,152,127, 1)',
+                        'rgba(112,34,255, 1)',
+                        'rgba(237,71,255, 1)',
+                        'rgba(96,197,213, 1)',
+                        'rgba(255,43,73, 1)',
+                        'rgba(43,0,212, 1)',
+                        'rgba(179,127,127, 1)',
+                        'rgba(159,127,170, 1)',
+                        'rgba(111,127,40, 1)'
+
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                                
+                            }
+                        }]
+                    }
+                }
+            });
+        
+          })
+
+          $(document).ready(function(){
+            var endpoint = "cause"
+            var data ="{{context}}"
+            var stomach = parseInt("{{stomach}}")
+            var chest = parseInt("{{chest}}")
+            var hand = parseInt("{{hand}}")
+            var face = parseInt("{{face}}")
+            var leg = parseInt("{{leg}}")
+            var back = parseInt("{{back}}")
+            console.log(data)
+            var ctx = document.getElementById('injury_area').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Stomach', 'Chest', 'Hand', 'face', 'Leg', 'back'],
+                    datasets: [{
+                        label: 'areas in the body where injuries occur',
+                        data: [stomach, chest, hand, face , leg, back],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        
+          })
+        
+          $(document).ready(function(){
+            var endpoint = "cause"
+            var data ="{{context}}"
+            var age1 = parseInt("{{age1}}")
+            var age2 = parseInt("{{age2}}")
+            var age3 = parseInt("{{age3}}")
+            var age4 = parseInt("{{age4}}")
+            var age5 = parseInt("{{age5}}")
+            var age6 = parseInt("{{age6}}")
+            var age7 = parseInt("{{age7}}")
+            var age8 = parseInt("{{age8}}")
+            var age9 = parseInt("{{age9}}")
+            var age10 = parseInt("{{age10}}")
+            
+            console.log(data)
+            var ctx = document.getElementById('agegroups').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['0 - 9', '10 - 19','20 - 29', '30 - 39', '40 - 49', '50 - 59', '60 - 69', '70 - 79', '80 - 89', '90 - 99'],
+                    datasets: [{
+                        label: 'patient age groups',
+                        data: [age1, age2, age3, age4, age5, age6, age7, age8, age9, age10],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(39, 16, 71, 0.2)',
+                            'rgba(210,127,127, 0.2)',
+                            'rgba(61,136,127, 0.2)',
+                            'rgba(143,88,127, 0.2)',
+                            'rgba(237,152,127, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(39, 16, 71, 1)',
+                            'rgba(210,127,127, 1)',
+                            'rgba(61,136,127, 1)',
+                            'rgba(143,88,127, 1)',
+                            'rgba(237,152,127, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        
+          })
+                
+    </script>
+
+    <style>  .homenavbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 5px;
+        overflow: hidden;
+        background-color: #1da0f2;
+        list-style-type: none;
+        color:white;
+        height: 30px;
+      }
+      
+      .homelinks {
+        float: left;
+        color:white;
+      }
+      
+      .homelinks a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        color:white;
+      }
+      
+      /* Change the link color to #111 (black) on hover */
+      .homelinks a:hover {
+        background-color: #111;
+      }
+      body { padding: 0; margin: 0; }
+
+      #map {
+        height: 500px;
+        margin: 10px auto;
+        width: 800px;
+      }
+    </style>
+    <ul class="homenavbar" >
+     
+                
+        <li><a href="head"  class="homelinks" style=" text-decoration: none;">home</a></li>
+        
+
+    </ul>
+
+    
+    <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+        <canvas id="myChart"  style="height:5vh; width:10vw"></canvas>
+    </div><br/>
+
+    <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+        <canvas id="pickup" style="height:5vh; width:10vw"></canvas>
+    </div>
+
+    <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+        <canvas id="injury_area" style="height:5vh; width:10vw"></canvas>
+    </div>
+    
+    <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+        <canvas id="agegroups" style="height:5vh; width:10vw"></canvas>
+    </div>
+    
+
+   
+
+  </body>
+</html>

@@ -1,0 +1,272 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- semantic UI -->
+    <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+    <!--Chart js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{% static 'css/main.css' %}"></script>
+
+    <title>Hospital home</title>
+  </head>
+  <body>
+    <script>
+        $(document).ready(function(){
+            var endpoint = "cause"
+            var data ="{{context}}"
+            var x = parseInt("{{x}}")
+            var y = parseInt("{{y}}")
+            var z = parseInt("{{z}}")
+            var b = parseInt("{{b}}")
+            var c = parseInt("{{c}}")
+            console.log(data)
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Accident', 'Unidentified', 'Act of nature', 'Attack', 'Pre-existing conditions'],
+                    datasets: [{
+                        label: 'categories of emergency cases',
+                        data: [x,y,z,b,c],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        
+          })
+        
+          $(document).ready(function(){
+            var parklands = parseInt('{{parklands}}')
+            var westlands = parseInt('{{westlands}}')
+            var spring = parseInt('{{spring}}')
+            var riverside = parseInt('{{riverside}}')
+            var kile = parseInt('{{kile}}')
+            var kilimani = parseInt('{{kilimani}}')
+            var loresho = parseInt('{{loresho}}')
+            var muthaiga = parseInt('{{muthaig}}')
+            var mathare = parseInt('{{mathare}}')
+            var mathareN = parseInt('{{mathareN}}')
+            var huruma = parseInt('{{huruma}}')
+            var kariobangi = parseInt('{{kariobangi}}')
+            var shauri = parseInt('{{shauri}}')
+            var jericho = parseInt('{{jericho}}')
+            var makadara = parseInt('{{makadara}}')
+            var doni = parseInt('{{doni}}')
+            var uhuru = parseInt('{{uhuru}}')
+            var buru = parseInt('{{buru}}')
+            var umoja = parseInt('{{umoja}}')
+            var ctx = document.getElementById('pickup').getContext('2d');
+            var age = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['parklands', 'westlands', 'spring', 'riverside', 'kile', 'kilimani', 'loresho', 'muthaiga', 'mathare', 'huruma', 'kariobangi', 'shauri', 'jericho', 'makadara', 'doni', 'uhuru', 'buru', 'umoja'],
+                    datasets: [{
+                        label: '',
+                        data: [parklands, westlands, spring, riverside, kile, kilimani, loresho, muthaiga, mathare, huruma, kariobangi, shauri, jericho, makadara, doni, uhuru, buru, umoja],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        
+          })
+         
+                
+    </script>
+    <style>  .homenavbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        list-style-type: none;
+        color:white;
+      }
+      
+      .homelinks {
+        float: left;
+        color:white;
+      }
+      
+      .homelinks a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        color:white;
+      }
+      
+      /* Change the link color to #111 (black) on hover */
+      .homelinks a:hover {
+        background-color: #111;
+      }</style>
+
+    <ul class="homenavbar" >
+        <span><li><a href="cause" class="homelinks" >Analytics &nbsp;</a></li></span>
+        <span><li><a href="chat" class="homelinks" >Messages</a></li></span>
+        <li><a href="logoutr" class="homelinks" style="float:right;">Logout</a></li>&nbsp;<br/><br/>
+        
+      </ul>
+    <form action="chat" method="post">
+        {%csrf_token%}
+        home
+        {{x}}
+
+        <button type="submit">messages</button>
+    </form>
+    <form action="cause" method="post">
+        {%csrf_token%}
+            <button>data</button>
+        <form>
+    <canvas id="myChart" width="1" height="1"></canvas><br/>
+
+   
+</form>
+hello
+<canvas id="pickup" width="1" height="1"></canvas>
+  </body>
+</html>
+
+
+<section class="signup">
+    <div class="container">
+      
+      <div class="signup-content">
+        <p><b>Paramedic details</b></p>
+        <form id='patient_details' method='post' action='patientdetails' class="signup-form">
+                    {%csrf_token%}
+                      <div class="form-group">
+                          <label for="reciever">Hospital</label>
+                          <input name='reciever' id='reciever' placeholder="hospital"/>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="sex">Sex</label>
+                        <input name='sex' id='sex' placeholder="patient sex"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area">Injury area</label>
+                        <input name='area' id='area' placeholder="area of injury"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="injury">Description of injury</label>
+                        <input name='injury' id='injury' placeholder="injury description"/>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="procedure">Required Procedure</label>
+                    <input name='procedure' id='procedure' placeholder="emergency procedure"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="info">Extra information</label>
+                    <input name='info' id='info' placeholder="extra information"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="pickup">Pick up location</label>
+
+                    <select name="pickup" id="pickup">
+                    <option value="parklands">Parklands</option>
+                    <option value="westlands">Westlands</option>
+                    <option value="springvalley">Spring Valley</option>
+                    <option value="riverside drive">Riverside Drive</option>
+                    <option value="Kileleshwa">Kileleshwa</option>
+                    <option value="Kilimani">Kilimani</option>
+                    <option value="Loresho">Loresho</option>
+                    <option value="Muthaiga">Muthaiga</option>
+                    <option value="Mathare Valley">Mathare Valley</option>
+                    <option value="Mathare North ">Mathare North </option>
+                    <option value="Lower Huruma">Lower Huruma</option>
+                    <option value="Kariobangi">Kariobangi</option>
+                    <option value="Shauri Moyo">Shauri Moyo</option>
+                    <option value="Maringo">Maringo</option>
+                    <option value="Jericho">Jericho</option>
+                    <option value="Makadara">Makadara</option>
+                    <option value="Doonholm Neighbourhood (Block 82)">Doonholm Neighbourhood (Block 82)</option>
+                    <option value="Uhuru (1-3)">Uhuru (1-3)</option>
+                    <option value="Buru Buru (1-6) (Blocks 72-79)">Buru Buru (1-6) (Blocks 72-79)</option>
+                    <option value="Umoja (1-2)">Umoja (1-2)</option>
+                    </select>
+
+                    <div class="group">
+                        <label for="cause">Cause of ailment</label>
+                        <select name="cause" id="cause">
+                            <option value="Accident">Accident</option>
+                            <option value="Unidentified">Unidentified</option>
+                            <option value="Act of nature">Act of nature</option>
+                            <option value="Attack">Attack</option>
+                            <option value="Pre-existing conditions">Pre-existing condition</option>
+        
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="submit" id="submit" class="form-submit" value="Submit"/>
+                      </div>
+                      </form>
+                    
+                  </div>
+       
+        
+      </div>
+  </div>
+</section>        

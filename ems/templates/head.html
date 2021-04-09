@@ -1,0 +1,207 @@
+{% load static %}
+{%csrf_token%}
+
+<html>
+  <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
+    
+</head>
+
+<body>
+  <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+  <style>
+    
+  </style>
+
+    <div class="wrapper" style="margin-left:250px">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Administrator panel</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                
+                <li class="active">
+                    <a href="#">Users</a>
+                    
+                </li>
+                <li>
+                    <a href="cause">Analytics</a>
+                    
+                </li>
+                <li>
+                    <a href="logoutr">Logout</a>
+                </li>
+                
+            </ul>
+
+            
+        </nav>
+      </div>
+    </div>
+        <section class="signup">
+            <div class="container">
+              
+              <div class="signup-content">
+               
+                  <form method="POST" id="signup-form" class="signup-form">
+                    {%csrf_token%}
+
+                    <p><b>Paramedic details</b></p>
+                      <div class="form-group">
+                          <label for="hworker">Paramedic Code</label>
+                          <input name='hworker' id='hworker' placeholder="Paramedic Code"/>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="hworker">Login ID</label>
+                          <input name='loginidr' id='loginidr' placeholder="Login ID"/>
+                      </div>
+
+                      <div class="form-row">
+                          <div class="form-group">
+                              <label for="namer">First Name</label>
+                              <input name='namer' id='namer' placeholder="First Name"/>
+                          </div>
+                          <div class="form-group">
+                              <label for="lname">Last Name</label>
+                              <input name='lname1' id='lname1' placeholder="Last Name"/>
+                              
+                          </div>
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group">
+                              <label for="phoner">Phone Number</label>
+                              <input name='phoner' id='phoner' placeholder="Phone Number"/>
+                          </div>
+                          <div class="form-group">
+                              <label for="emailr">Email</label>
+                              <input name='emailr' id='emailr' placeholder="Email"/>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="instituter">Institution</label>
+                          <input name='instituter' id='instituter' placeholder="Institution"/>
+                      </div>
+                      
+                      
+                      <div class="form-group">
+                          <input type="submit" name="submit" id="submit" class="form-submit" value="Submit"/>
+                      </div>
+                  </form>
+                  <p><b>Search</b></p>
+                  <form action="search" method='post' id="signup-form"  class="signup-form" >
+                    {%csrf_token%}
+
+                    <div class="form-group">
+                      <label for="hworker">Find User</label>
+                      <input name='user' id='user' name='user' placeholder="User ID"/>
+                      <button type='submit' style="background-color:#1da0f2; color:white;" >find</button><br/><br/>
+                     
+                    </div>
+
+                    <div class="form-group">
+                      <label for="loginup">Login ID</label>
+                      <input value="{{loginid}}" id="loginup" name="loginup" placeholder="Login ID">
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                          <label for="firstname">First Name</label>
+                          <input value="{{fname}}" id="firstname" name="firstname" placeholder="First Name"/>
+                      </div>
+                      <div class="form-group">
+                          <label for="lastname">Last Name</label>
+                          <input value="{{lname}}" id="lastname" name="lastname" placeholder="Last Name">
+                      </div>  
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                          <label for="email">Email</label>
+                          <input value="{{email}}" id="email" name="email" placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                          <label for="phone">Phone Number</label>
+                          <input value="{{phone}}" id="phone" name="phone" placeholder="Phone Number">
+                      </div> 
+                    </div>
+
+                    <div class="form-group">
+                      <label for="institution">Institute</label>
+                      <input value="{{institution}}" id="institution" name="institution" placeholder="Institute">
+                    </div>
+                    <button formaction="delete" type='submit' style="background-color:#1da0f2; color:white;">delete</button>
+                    <button formaction="update" type='submit' style="background-color:#1da0f2; color:white;">update</button>
+                    
+                    
+                </form>
+               
+                
+                  <form method='post'  action='addhos' id="signup-form"  class="signup-form"> 
+                    {%csrf_token%}
+                    <p><b>Hospital details</b></p>
+                    <div class="form-group">
+                      <label for="hworker">hospital code</label>
+                      <input name='hcode' id='hcode' placeholder="hospital code"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="hlogin">login ID</label>
+                      <input name='hlogin' id='hlogin' placeholder="login ID"/>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="hname">Name</label>
+                      <input name='hname' id='hname' placeholder="Name"/>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group">
+                          <label for="hemail">Email</label>
+                          <input name='hemail' id='hemail' placeholder="Email"/>
+                      </div>
+                      <div class="form-group">
+                          <label for="hphone">Phone</label>
+                          <input name='hphone' id='hphone' placeholder="Phone"/><br/>
+                          
+                      </div><br/>
+                   <div class="form-group">
+                      <input type="submit" name="submit" id="submit" class="form-submit" value="Submit"/>
+                    </div>
+                  </form>    
+          
+              </div>
+          </div>
+        </section>        
+        
+                  
+                
+
+        
+    
+  
+     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script> $(document).ready(function () {
+        $("#sidebar").mCustomScrollbar({
+            theme: "minimal"
+        });
+
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar, #content').toggleClass('active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+    });
+  </script>
+    </body>
+</html>

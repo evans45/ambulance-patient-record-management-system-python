@@ -1,0 +1,112 @@
+{% load static %}
+{%csrf_token%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+
+		<style>  .homenavbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 5px;
+            overflow: hidden;
+            background-color: #1da0f2;
+            list-style-type: none;
+            color:white;
+            height: 30px;
+          }
+          
+          .homelinks {
+            float: left;
+            color:white;
+          }
+          
+          .homelinks a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            color:white;
+          }
+          
+          /* Change the link color to #111 (black) on hover */
+          .homelinks a:hover {
+            background-color: #111;
+          }
+          body { padding: 0; margin: 0; }
+
+          #map {
+            height: 500px;
+            margin: 10px auto;
+            width: 800px;
+          }
+        </style>
+        <ul class="homenavbar" >
+         
+                    
+            <li><a href="hospitalhome"  class="homelinks" style=" text-decoration: none;">home</a></li>
+            
+    
+        </ul>
+       
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+					<div class="table">
+
+						<div class="row header">
+							<div class="cell">
+								Age
+							</div>
+							<div class="cell">
+								Sex
+							</div>
+							<div class="cell">
+								Injury Area
+							</div>
+							<div class="cell">
+								Injury Description
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="cell">
+								Required Procedure
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="cell">
+								Extra Information
+                            </div>
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title="Age">
+								{{age}}
+							</div>
+							<div class="cell" data-title="Sex">
+								{{sex}}
+							</div>
+							<div class="cell" data-title="Injury Area">
+								{{injury_area}}
+							</div>
+							<div class="cell" data-title="Injury Description">
+								{{injury_description}}
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="cell" data-title="Required Procedure">
+								{{required_procedure}}
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="cell" data-title="Extra Information">
+								{{extra_information}}
+							</div>
+						</div>
+                        <form method="post" action="pdf">{%csrf_token%}<button style="font-size: 20px;"><b>view pdf</b></button></form>
+						
+
+					</div>
+			</div>
+		</div>
+	</div>
+           
+        
+    </body>
+</html>
